@@ -7,6 +7,7 @@ def info_num(text):
     print(ord(c) - A, " ", end="")
   print()
 
+# Implementation of the example in http://en.wikipedia.org/wiki/Keystream
 def keystream(plain, key):
   i = 0
   length = len(plain)
@@ -19,6 +20,7 @@ def keystream(plain, key):
   print()
   print("text: ", result)
 
+# Refer to http://en.wikipedia.org/wiki/Rc4#The_key-scheduling_algorithm_.28KSA.29
 def KSA(key):
   S = [c for c in range(256)]
   j = 0
@@ -28,6 +30,7 @@ def KSA(key):
     S[i], S[j] = S[j], S[i]
   return S
 
+# Refer to http://en.wikipedia.org/wiki/Rc4#The_pseudo-random_generation_algorithm_.28PRGA.29
 def PRGA(data, S):
   i = 0
   j = 0
