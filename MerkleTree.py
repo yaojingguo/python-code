@@ -23,9 +23,13 @@ def build(pathname):
     if end > length:
       end = length
     digest[block_no] = hash(content[begin:end])
+    print str(digest[block_no]).encode("hex")
 
   # Build the binary tree
-
+  for i in range(20):
+    top[i] = 0
+    for finger in digest:
+      top[i] = top[i] ^ finger[i]
   
 
 
